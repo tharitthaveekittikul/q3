@@ -38,11 +38,12 @@ import java.util.Scanner;
 //}
 public class q3 {
     public static int n;
-    public static String[][] board = new String[n][n];
+    public static String[][] board;
     public static String player = "X";
     public static void showBoard(){
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
+        board = new String[n][n];
         int k = 0;
         System.out.println("\t\t\t\t\t\t\t-------------");
         for(int i=0; i<n;i++){
