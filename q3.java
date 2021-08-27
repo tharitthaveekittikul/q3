@@ -88,8 +88,13 @@ public class q3 {
         for(int i = 0; i < 9; i++){
             showBoard();
             createPlayer();
-            if (((board[0] == board[1]) && (board[1] == board[2])) ||
-                    ((board[3] == board[4]) && (board[4] == board[5]))||
+            for(int i=0; i<n;i++){
+                for(int j=0;j<n;j++){
+                    if()
+                }
+            }
+            if (((board[0][0] == board[0][1]) && (board[0][1] == board[0][2])) ||
+                    ((board[1][3] == board[4]) && (board[4] == board[5]))||
                     ((board[6] == board[7]) && (board[7] == board[8]))||
                     ((board[0] == board[3]) && (board[3] == board[6]))||
                     ((board[1] == board[4]) && (board[4] == board[7]))||
