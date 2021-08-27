@@ -170,9 +170,10 @@ class Board implements MouseListener{
     @Override
     public void mousePressed(MouseEvent e) {
     }
-
+    int count = 0;
     @Override
     public void mouseReleased(MouseEvent e) {
+        count++;
         mY = e.getX() / (800/N_int);
         mX = e.getY() / (800/N_int);
 //        System.out.println(mY);
@@ -181,13 +182,17 @@ class Board implements MouseListener{
         int after = Board.mX;
         q3.board[pos][after] = q3.player;
         f.setVisible(false);
+        if(count == q3.n*q3.n){
+            f.setVisible(false);
+            after_win();
+        }
         if(q3.player == "X"){
             q3.player = "O";
             showBoard();
             if(checkWin() == true){
                 f.setVisible(false);
                 after_win();
-                System.out.println("winner");
+//                System.out.println("winner");
             }
         }
         else if(q3.player == "O"){
@@ -196,7 +201,7 @@ class Board implements MouseListener{
             if(checkWin() == true){
                 f.setVisible(false);
                 after_win();
-                System.out.println("winner!");
+//                System.out.println("winner!");
             }
         }
     }
@@ -222,6 +227,15 @@ class Board implements MouseListener{
         fexit.setLayout(null);
         fexit.setResizable(false);
         fexit.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        if(q3.player == "X"){
+            win.setText("O WINNER");
+        }
+        if(q3.player == "O"){
+            win.setText("X WINNER");
+        }
+        if(count == q3.n*q3.n){
+            win.setText("DRAW");
+        }
     }
 
 
